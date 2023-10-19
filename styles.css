@@ -123,5 +123,8 @@ body{
     .card p {
         font-size: 0.9em;
     }
+    .card .back{
+        width:35%;
+    }
 }
 
