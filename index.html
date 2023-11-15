@@ -1,49 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Card</title>
-    <link rel="stylesheet" href="styles.css"> 
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(to bottom right, #5e5e5e, #f4f4f4);
+    }
+
+    .progress-container {
+      width: 90%;
+      max-width: 400px;
+      margin: 0 auto;
+      border: 2px solid #3498db;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .progress-bar {
+      width: 0;
+      height: 30px;
+      background-color: #2ecc71;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+      transition: width 0.5s ease-in-out;
+      border-radius: 8px;
+    }
+    .loading-text {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      color: #2980b9;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
 </head>
 <body>
-   
-    <div class="card">
-        <div class="front">
-            
-            <div class="imgset">
-                <img src="https://th.bing.com/th/id/R.d35e670d76502e9faa6f99595877043c?rik=%2bzaSO7UW6S2IYQ&riu=http%3a%2f%2fimages.unsplash.com%2fphoto-1535141192574-5d4897c12636%3fixlib%3drb-1.2.1%26q%3d80%26fm%3djpg%26crop%3dentropy%26cs%3dtinysrgb%26w%3d1080%26fit%3dmax&ehk=JAewNjjZh0vEwIrQEFcPnH1Bo49Qg4lYaQYgFjvcee0%3d&risl=&pid=ImgRaw&r=0" alt="Front Image"> 
-                
-            </div>
-        </div>
-        <div class="back">
-            <img src="toi moi.jpg" height="420" width="300">
-        </div>
-            <div class="text-container">
-                <p id="head">Happy Birthday !!</p>
-                
-    
+  <div class="progress-container">
+    <div class="progress-bar" id="myProgressBar">0%</div>
+    <div class="loading-text" id="loadingText">Loading...</div>
+  </div>
 
-                
-                <p>Enjoy your special day!</p>
-            
-        </div>
-        
-    </div>
-    <button id="play">PLAY</button>
-    <script>
-        let play = document.getElementById("play");
-        function playMusic() {
-            let audio = new  Audio("Upbeat-Birthday-Song.mp3");
-            audio.play()
-        }
-        play.addEventListener("click",playMusic);
-    </script>
-    
+  <button onclick="startProgress()">Start Progress</button>
 
-   
-    
-
+  <script src="script.js"></script>
 </body>
 </html>
