@@ -1,130 +1,103 @@
-body{
-    height: 100%;
-    padding: 70px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family:Arial, Helvetica, sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Gilroy';
 }
-.card{
+
+html,body{
+    height:100%;
+    width:100%;
+}
+#page1{
+   min-height:100vh;
+    width:100%;
+    background-color:#efeae3;
     position:relative;
-    width: 300px;
-    height: 425px;
-    border: 10px solid red;
-    margin: 60px auto 0 auto;
-    box-shadow: inset 10px 0px 15px 0px rgba(0,0,0,0.1);
-    background-image: linear-gradient(
-                    to bottom,
-     rgb(230, 92, 92),
-     rgba(228, 131, 132, 0.5)
-                     ),
-      url("https://wallpapercave.com/wp/wp5729701.jpg"); 
+    padding:0 2vw;
+}
+#nav{
+    padding:2vw 2vw;
+    width:100%;
+    /*background-color:red;*/
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+#nav2{
+    display:flex;
+    align-items:center;
+    gap: 1vw;
 
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-color: #e6f0e6;
-                   }
-.card .text-container {
-     width: 80%;
-     height: 80%;
-     margin: auto;
-                   }
- .strikethrough {
-    text-decoration: line-through;
-                   }
- .card .text-container #head {
-    font-size: 1.5em;
-     margin: 60px auto 60px auto;
-                   }
-.card p {
-     font-size: 1.0em;
-     line-height: 1.1;
-     font-family: "Nobile";
-     color: #331717;
-  font-style: italic;
-  text-align: center;
-  margin: 30px auto 0px auto;
-}
-.card .front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin: -10px 0px 0px -10px;
-  border: 10px solid #fcc300;
-  backface-visibility: hidden;
-  background-color: #fcc300;
-  background-image: url("https://cdn.wallpapersafari.com/7/60/BZhzsa.jpg");
-  background-size: contain;
-  transform-style: preserve-3d;
-  transform-origin: 0% 50%;
-  transform: perspective(800px) rotateY(0deg);
-  transition: all 0.8s ease-in-out;
-}
-.card:hover .front {
-  transform: perspective(800px) rotateY(-170deg);
-  background-color: #41718d;
-}
-.card:hover .back {
-  transform: perspective(800px) rotateY(-170deg);
-  box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3),
-    inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
-  background-color: #d2dcd2;
-}
-.card .back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 10px solid #fcc300;
-  margin: -10px 0px 0px -10px;
-  backface-visibility: visible;
-  filter: drop-shadow(2px 2px 4px rgba(191, 180, 180, 0.236));
-  transform-style: preserve-3d;
-  transform-origin: 0% 50%;
-  transform: perspective(800px) rotateY(0deg);
-  transition: all 0.8s ease-in-out;
-  background-color: #e6f0e6;
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
-.imgset {
-  position: relative;
-  z-index: 1;
-  margin-bottom: -215px;
-}
-.imgset img {
-  box-shadow: 0px 6px 11px 7px rgba(0, 0, 0, 0.22);
-  border-radius: 5px;
-}
+#nav2 h4{
+    padding:10px 20px;
+    border:1px solid rgb(106, 95, 95);
+    border-radius:50px;
+    position:relative;
+    overflow: hidden;
 
-#play{
-    padding: 150x 32px;
-    background-color:pink;
-    border: none;
-    color:whitesmoke;
-    text-align: center;
+}
+#nav2 h4::after{
+    content:"";
+    position:absolute;
+    height: 100%;
+    width:100%;
+    background-color: black;
+    left:0%;
+    bottom:-100%;
+    border-radius:50%;
+    transition:all ease 0.3s;
+    
+
+}
+#nav2 h4:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+#nav2 h4 a{
+    color:#000000bb;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    position:relative;
+    z-index: 9;
 }
-@media screen and (max-width: 480px) {
-    .card {
-        width: 100%;
-        margin: 20px auto 0 auto;
-    }
-
-    .card .text-container {
-        width: 90%;
-    }
-
-    .card .text-container #head {
-        font-size: 1.2em;
-    }
-
-    .card p {
-        font-size: 0.9em;
-    }
-    .card .back{
-        width:35%;
-    }
+#nav2 h4:hover a{
+    color:white;
 }
-
+#center{
+    height:65vh;
+    width:100%;
+   /* background-color:orange;*/
+    display:flex;
+    align-items:flex-end;
+    justify-content: space-between;
+    padding-bottom: 2vw;
+}
+#left h3{
+    width:20vw;
+    font-size:2vw;
+    line-height: 2vw;
+}
+#center h1{
+    font-size:8vw;
+    line-height: 7vw;
+}
+#page1 video{
+    position:relative;
+    width:100%;
+    border-radius: 30px;
+    margin-top: 4px;
+}
+#circle{
+    height:40vw;
+    width:30vw;
+    position:absolute;
+    border-radius:50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius:50% ;
+    background-color: orangered;
+    filter:blur(20px);
+    right:0vh;
+    top:65vh;
+}
